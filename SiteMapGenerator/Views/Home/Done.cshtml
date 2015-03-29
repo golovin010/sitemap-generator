@@ -1,0 +1,8 @@
+﻿@{
+    ViewBag.Title = "Done";
+}
+<center>
+    <h1>Congratulations! Site map for @ViewBag.Site ready.</h1>
+    <h2>We found @ViewBag.LinkCount pages in @ViewBag.ElapsedMiliseconds ms.</h2>
+    @Html.ActionLink("Download SiteMap", "DownloadFile", "Home", new { fileName = ViewBag.FileName }, null)
+</center>

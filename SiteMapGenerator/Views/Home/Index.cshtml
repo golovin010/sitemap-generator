@@ -1,0 +1,23 @@
+﻿@model SiteMapGenerator.Models.SiteMapQueryModel
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Site Map Genarator</h2>
+<div style="width: 50%; height: 300px; border: 1px solid darkblue; border-radius: 3px;">
+    @if (ViewBag.Action != null)
+    {
+        <p>@ViewBag.Action</p>
+    }else
+    {
+        using (Html.BeginForm("Index", "Home"))
+        {
+            <p>Site Url: @Html.EditorFor(m => m.HomePageUrl)</p>
+            <p>Scan Depth: @Html.EditorFor(m => m.Depth)</p>
+            <p>Ignore links with nofollow attr.: @Html.EditorFor(m=>m.Nofollow)</p>
+            <input type="submit" value="Generate Map" />
+        }
+    }
+        
+</div>
+
